@@ -3,12 +3,14 @@ unit ServerContainerUnit1;
 interface
 
 uses System.SysUtils, System.Classes,
+    Datasnap.DSHTTPCommon, Datasnap.DSHTTP,
   Datasnap.DSServer, Datasnap.DSCommonServer,
   IPPeerServer, IPPeerAPI, Datasnap.DSAuth;
 
 type
   TServerContainer1 = class(TDataModule)
     DSServer1: TDSServer;
+    DSHTTPService1: TDSHTTPService;
     DSAuthenticationManager1: TDSAuthenticationManager;
     DSServerClass1: TDSServerClass;
     procedure DSServerClass1GetClass(DSServerClass: TDSServerClass;
@@ -21,12 +23,10 @@ type
   private
     { Private declarations }
   public
-    constructor Create(AOwner: TComponent); override;
-    destructor Destroy; override;
   end;
 
-function DSServer: TDSServer;
-function DSAuthenticationManager: TDSAuthenticationManager;
+var
+  ServerContainer1: TServerContainer1;
 
 implementation
 
@@ -35,35 +35,6 @@ implementation
 
 uses
   ServerMethodsUnit1;
-
-var
-  FModule: TComponent;
-  FDSServer: TDSServer;
-  FDSAuthenticationManager: TDSAuthenticationManager;
-
-function DSServer: TDSServer;
-begin
-  Result := FDSServer;
-end;
-
-function DSAuthenticationManager: TDSAuthenticationManager;
-begin
-  Result := FDSAuthenticationManager;
-end;
-
-constructor TServerContainer1.Create(AOwner: TComponent);
-begin
-  inherited;
-  FDSServer := DSServer1;
-  FDSAuthenticationManager := DSAuthenticationManager1;
-end;
-
-destructor TServerContainer1.Destroy;
-begin
-  inherited;
-  FDSServer := nil;
-  FDSAuthenticationManager := nil;
-end;
 
 procedure TServerContainer1.DSServerClass1GetClass(
   DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
@@ -91,9 +62,5 @@ begin
   valid := True;
 end;
 
-initialization
-  FModule := TServerContainer1.Create(nil);
-finalization
-  FModule.Free;
 end.
 

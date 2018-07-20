@@ -1,21 +1,20 @@
 program TDC2018_DATASNAP;
-{$APPTYPE GUI}
 
 uses
   Vcl.Forms,
   Web.WebReq,
   IdHTTPWebBrokerBridge,
-  FormUnit1 in 'FormUnit1.pas' {Form1},
+  Unit2 in 'Unit2.pas' {Form2},
   ServerMethodsUnit1 in 'ServerMethodsUnit1.pas',
-  ServerContainerUnit1 in 'ServerContainerUnit1.pas' {ServerContainer1: TDataModule},
-  WebModuleUnit1 in 'WebModuleUnit1.pas' {WebModule1: TWebModule};
+  ServerContainerUnit1 in 'ServerContainerUnit1.pas' {ServerContainer1: TDataModule};
 
 {$R *.res}
 
 begin
-  if WebRequestHandler <> nil then
-    WebRequestHandler.WebModuleClass := WebModuleClass;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TServerContainer1, ServerContainer1);
   Application.Run;
 end.
+

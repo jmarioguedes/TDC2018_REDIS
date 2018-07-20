@@ -3,20 +3,28 @@ object ServerContainer1: TServerContainer1
   Height = 271
   Width = 415
   object DSServer1: TDSServer
-    Left = 104
-    Top = 35
+    Left = 96
+    Top = 11
+  end
+  object DSHTTPService1: TDSHTTPService
+    HttpPort = 8080
+    Server = DSServer1
+    Filters = <>
+    AuthenticationManager = DSAuthenticationManager1
+    Left = 96
+    Top = 135
   end
   object DSAuthenticationManager1: TDSAuthenticationManager
     OnUserAuthenticate = DSAuthenticationManager1UserAuthenticate
     OnUserAuthorize = DSAuthenticationManager1UserAuthorize
     Roles = <>
-    Left = 136
-    Top = 141
+    Left = 96
+    Top = 197
   end
   object DSServerClass1: TDSServerClass
     OnGetClass = DSServerClass1GetClass
     Server = DSServer1
-    Left = 232
-    Top = 91
+    Left = 200
+    Top = 11
   end
 end
