@@ -1,5 +1,6 @@
 object ServerContainer1: TServerContainer1
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 271
   Width = 415
   object DSServer1: TDSServer
@@ -8,6 +9,7 @@ object ServerContainer1: TServerContainer1
   end
   object DSHTTPService1: TDSHTTPService
     HttpPort = 8080
+    OnHTTPTrace = DSHTTPService1HTTPTrace
     Server = DSServer1
     Filters = <>
     AuthenticationManager = DSAuthenticationManager1
@@ -26,5 +28,11 @@ object ServerContainer1: TServerContainer1
     Server = DSServer1
     Left = 200
     Top = 11
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
+    Left = 296
+    Top = 168
   end
 end
