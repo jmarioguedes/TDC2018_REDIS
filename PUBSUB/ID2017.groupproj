@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8E8F514D-11A5-430E-AC02-552FBD12B06B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\PRIMEIRO CONTATO\ID2017_Iniciando.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ID2017_PUBSUB.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\ENFILEIRADOR\ID2017_Enfileirador.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\CONSUMIDOR\ID2017_Consumidor.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ID2017_Iniciando">
+        <MSBuild Projects="..\PRIMEIRO CONTATO\ID2017_Iniciando.dproj"/>
+    </Target>
+    <Target Name="ID2017_Iniciando:Clean">
+        <MSBuild Projects="..\PRIMEIRO CONTATO\ID2017_Iniciando.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ID2017_Iniciando:Make">
+        <MSBuild Projects="..\PRIMEIRO CONTATO\ID2017_Iniciando.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ID2017_PUBSUB">
+        <MSBuild Projects="ID2017_PUBSUB.dproj"/>
+    </Target>
+    <Target Name="ID2017_PUBSUB:Clean">
+        <MSBuild Projects="ID2017_PUBSUB.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ID2017_PUBSUB:Make">
+        <MSBuild Projects="ID2017_PUBSUB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ID2017_Enfileirador">
+        <MSBuild Projects="..\ENFILEIRADOR\ID2017_Enfileirador.dproj"/>
+    </Target>
+    <Target Name="ID2017_Enfileirador:Clean">
+        <MSBuild Projects="..\ENFILEIRADOR\ID2017_Enfileirador.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ID2017_Enfileirador:Make">
+        <MSBuild Projects="..\ENFILEIRADOR\ID2017_Enfileirador.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ID2017_Consumidor">
+        <MSBuild Projects="..\CONSUMIDOR\ID2017_Consumidor.dproj"/>
+    </Target>
+    <Target Name="ID2017_Consumidor:Clean">
+        <MSBuild Projects="..\CONSUMIDOR\ID2017_Consumidor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ID2017_Consumidor:Make">
+        <MSBuild Projects="..\CONSUMIDOR\ID2017_Consumidor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ID2017_Iniciando;ID2017_PUBSUB;ID2017_Enfileirador;ID2017_Consumidor"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ID2017_Iniciando:Clean;ID2017_PUBSUB:Clean;ID2017_Enfileirador:Clean;ID2017_Consumidor:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ID2017_Iniciando:Make;ID2017_PUBSUB:Make;ID2017_Enfileirador:Make;ID2017_Consumidor:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
