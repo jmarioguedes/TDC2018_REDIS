@@ -89,9 +89,9 @@ end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 var
-iCount : Integer;
+  iCount: Integer;
 begin
-  iCount := Self.FCon.DEL([Self.ledtKeyName.Text]);
+  iCount              := Self.FCon.DEL([Self.ledtKeyName.Text]);
   Self.Label4.Caption := Format('Foram excluídas %d chaves', [iCount]);
 end;
 

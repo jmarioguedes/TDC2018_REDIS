@@ -1,0 +1,19 @@
+-- Table: public."TB_VENDAS"
+
+-- DROP TABLE public."TB_VENDAS";
+
+CREATE TABLE public."TB_VENDAS"
+(
+    "ID" integer NOT NULL DEFAULT nextval('"TB_VENDAS_ID_seq"'::regclass),
+    "ID_PRODUTO" integer NOT NULL,
+    "UF" character varying(2) COLLATE pg_catalog."default" NOT NULL,
+    "VALOR" money NOT NULL,
+    CONSTRAINT "TB_VENDAS_pkey" PRIMARY KEY ("ID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."TB_VENDAS"
+    OWNER to postgres;
