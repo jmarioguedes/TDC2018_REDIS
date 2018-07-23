@@ -6,15 +6,15 @@ https://www.slideshare.net/jmarioguedes/tdcsp-2018-possibilidades-com-o-redis-no
 
 ## Projetos
 
-----------------------------------------------------------------------
-| PROJETO          | PROPÓSITO                                       |
-|------------------|-------------------------------------------------|
-| PRIMEIRO CONTATO | OPERAÇÕES BÁSICAS COM O REDIS                   |
-| AVALIACAO        | TESTE DE STRESS COM O REDIS                     |
-| PUBSUB           | PUBLICAÇÃO E ASSINATURA                         |
-| DATA SNAP        | EXEMPLO DE ARMAZENAMENTO DE SESSÃO E CACHEAMENTO|
-| ENFILEIRADOR     | EXEMPLO DE UM PRODUTOR DE FILA                  |
-| CONSUMIDOR       | EXEMPLO DE UM CONSUMIDOR DE FILA                |
-| Z - DATABASE     | SCRIPT DE POPULAÇÃO DE UMA TABELA NO POSTGRESQL |
-----------------------------------------------------------------------
+--------------------------------------------------------------------------
+| PROJETO              | PROPÓSITO                                       |
+|----------------------|-------------------------------------------------|
+| A - PRIMEIRO CONTATO | OPERAÇÕES BÁSICAS COM O REDIS                   |
+| B - AVALIACAO        | TESTE DE STRESS COM O REDIS                     |
+| C - PUBSUB           | PUBLICAÇÃO E ASSINATURA                         |
+| D - DATA SNAP        | EXEMPLO DE ARMAZENAMENTO DE SESSÃO E CACHEAMENTO|
+| E - ENFILEIRADOR     | EXEMPLO DE UM PRODUTOR DE FILA                  |
+| F - CONSUMIDOR       | EXEMPLO DE UM CONSUMIDOR DE FILA                |
+| Z - DATABASE         | SCRIPT DE POPULAÇÃO DE UMA TABELA NO POSTGRESQL |
+--------------------------------------------------------------------------
  
