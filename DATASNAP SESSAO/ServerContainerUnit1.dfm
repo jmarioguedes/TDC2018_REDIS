@@ -4,6 +4,7 @@ object ServerContainer1: TServerContainer1
   Height = 271
   Width = 415
   object DSServer1: TDSServer
+    AutoStart = False
     Left = 88
     Top = 11
   end
@@ -45,7 +46,6 @@ object ServerContainer1: TServerContainer1
   object DSServerClass2: TDSServerClass
     OnGetClass = DSServerClass2GetClass
     Server = DSServer1
-    LifeCycle = 'Invocation'
     Left = 336
     Top = 24
   end

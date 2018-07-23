@@ -152,13 +152,13 @@ object Form1: TForm1
     Margins.Top = 6
     Margins.Right = 6
     Margins.Bottom = 6
-    EditLabel.Width = 155
+    EditLabel.Width = 152
     EditLabel.Height = 27
     EditLabel.Margins.Left = 6
     EditLabel.Margins.Top = 6
     EditLabel.Margins.Right = 6
     EditLabel.Margins.Bottom = 6
-    EditLabel.Caption = 'Nome da Chave'
+    EditLabel.Caption = 'Nome da chave'
     TabOrder = 8
     Text = 'EVENTO:TDC:2018'
   end

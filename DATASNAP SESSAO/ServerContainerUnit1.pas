@@ -60,10 +60,12 @@ type
     procedure DSHTTPService1HTTPTrace(Sender: TObject; AContext: TDSHTTPContext; ARequest: TDSHTTPRequest; AResponse: TDSHTTPResponse);
     procedure DSServerClass2GetClass(DSServerClass: TDSServerClass; var PersistentClass: TPersistentClass);
   private
-    FRedis: IRedisClient;
+    FChamadas: Integer;
+    FRedis   : IRedisClient;
     function AutenticarUsuario(const AUsuario: string; const ASenha: string; var ASession: string; out AMotivo: string): Boolean;
   public
     property Redis: IRedisClient read FRedis;
+    property Chamadas: Integer read FChamadas;
   end;
 
 var
@@ -76,7 +78,7 @@ implementation
 uses
   ServerMethodsUnit1,
   Winapi.ActiveX,
-  Vcl.Dialogs;
+  Vcl.Dialogs, Unit2;
 
 threadvar _USUARIO: string;
 threadvar _SENHA: string;
@@ -183,10 +185,14 @@ end;
 
 procedure TServerContainer1.DataModuleCreate(Sender: TObject);
 begin
+  Self.DSHTTPService1.HttpPort := StrToInt(Vcl.Dialogs.InputBox('Defina a porta HTTP', 'Porta:', '8080'));
+
   Self.FRedis := TRedisClient.Create();
   Self.Redis.Connect;
 
   Self.FDConnection1.Open();
+
+  Self.DSServer1.Start;
 end;
 
 procedure TServerContainer1.DSAuthenticationManager1UserAuthenticate(Sender: TObject; const Protocol, Context, User, Password: string; var valid: Boolean;
@@ -230,6 +236,9 @@ var
   iTempoDuracao: Integer;
   _injection   : TDSHTTPResponseIndy;
 begin
+  Inc(Self.FChamadas);
+  Form2.Label2.Caption := Format('Chamadas atendidas: [%d]', [Self.FChamadas]);
+
   iTempoDuracao := MilliSecondsBetween(Now, _DATA_INICIO);
   _injection    := TDSHTTPResponseIndy(AResponse);
 

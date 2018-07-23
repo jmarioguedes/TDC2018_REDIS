@@ -19,8 +19,6 @@ type
     function EchoString(Value: string): string;
     function ReverseString(Value: string): string;
   end;
-{$METHODINFO OFF}
-{$METHODINFO ON}
 
   TTabelaVenda = class(TComponent)
   public
@@ -33,7 +31,8 @@ implementation
 
 uses System.StrUtils,
   ServerContainerUnit1,
-  Redis.Values;
+  Redis.Values,
+  Unit2;
 
 function TServerMethods1.EchoString(Value: string): string;
 begin

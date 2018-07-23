@@ -3,22 +3,37 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Threading,
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls,
+  System.Threading,
 
-  Redis.Commons, Redis.Client, Redis.NetLib.INDY, Redis.Values
+  Redis.Commons,
+  Redis.Client,
+  Redis.NetLib.INDY,
+  Redis.Values,
+  Vcl.ExtCtrls
 
-  ;
+    ;
 
 type
   TForm1 = class(TForm)
+    Memo1: TMemo;
+    Panel1: TPanel;
     Button1: TButton;
     Label1: TLabel;
-    Memo1: TMemo;
+    Label3: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
-    FTask : ITask;
+    FTask: ITask;
   public
     { Public declarations }
   end;
@@ -40,9 +55,9 @@ begin
 
     procedure
     var
-    oRedis : IRedisClient;
-    oValue : TRedisArray;
-    iCount : Integer;
+      oRedis: IRedisClient;
+      oValue: TRedisArray;
+      iCount: Integer;
     begin
 
       oRedis := NewRedisClient();
@@ -56,28 +71,25 @@ begin
           Inc(iCount);
 
           // Sincronização com a Thread principal
-          TThread.Synchronize(
-            nil,
+          TThread.Synchronize(nil,
 
             procedure
+            var
+              sLog: string;
             begin
-              Self.Memo1.Lines.Add(
-                Format('%s - %s', [oValue.Value[0].Value, oValue.Value[1].Value])
-              );
-
-              Self.Label1.Caption := IntToStr(iCount);
-            end
-
-          );
+              sLog := Format('%s - %s', [oValue.Value[0].Value, oValue.Value[1].Value]);
+              Self.Memo1.Lines.Add(sLog);
+              Self.Label1.Caption := Format('%d comandos processados!',[iCount]);
+            end);
 
           // Representa um processamento qualquer
-          Sleep(500);
+          Sleep(250);
         end;
       end;
 
     end
 
-  );
+    );
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);

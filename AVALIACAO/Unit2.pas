@@ -25,17 +25,16 @@ uses
 
 type
   TForm2 = class(TForm)
-    Button1: TButton;
     LabeledEdit1: TLabeledEdit;
     Button2: TButton;
     Button3: TButton;
-    SpinEdit1: TSpinEdit;
     Label1: TLabel;
     Button4: TButton;
-    procedure Button1Click(Sender: TObject);
+    Edit1: TEdit;
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     FCon: IRedisClient;
   public
@@ -48,13 +47,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm2.Button1Click(Sender: TObject);
-begin
-  Self.FCon := TRedisClient.Create();
-  Self.FCon.Connect;
-  Self.Button1.Enabled := False;
-end;
 
 procedure TForm2.Button2Click(Sender: TObject);
 var
@@ -69,7 +61,7 @@ begin
   Application.ProcessMessages;
   for iCount := 1 to 100000 do
   begin
-    sKey   := Self.LabeledEdit1.Text + IntToStr(iCount);
+    sKey   := Format('%s:%d#', [Self.LabeledEdit1.Text, iCount]);
     sValue := Format('O valor desta chave é: [%d]', [iCount]);
     Self.FCon.&SET(sKey, sValue);
   end;
@@ -88,7 +80,7 @@ var
 begin
   cTime := GetTickCount();
 
-  sKey   := Self.LabeledEdit1.Text + IntToStr(Self.SpinEdit1.Value);
+  sKey   := Self.Edit1.Text;
   oValue := Self.FCon.GET(sKey);
   if oValue.IsNull then
     Self.Label1.Caption := '# A CHAVE NÃO EXISTE#'
@@ -111,7 +103,7 @@ begin
   Application.ProcessMessages;
   for iCount := 1 to 100000 do
   begin
-    sKey := Self.LabeledEdit1.Text + IntToStr(iCount);
+    sKey := Format('%s:%d#', [Self.LabeledEdit1.Text, iCount]);
     Self.FCon.DEL([sKey]);
   end;
   Self.Cursor := crDefault;
@@ -119,6 +111,12 @@ begin
 
   cTime := GetTickCount() - cTime;
   ShowMessageFmt('Tempo de execução: [%f] segundos', [cTime / 1000]);
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  Self.FCon := TRedisClient.Create();
+  Self.FCon.Connect;
 end;
 
 end.

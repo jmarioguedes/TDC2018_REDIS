@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'TESTE DE STRESS'
-  ClientHeight = 600
-  ClientWidth = 735
+  ClientHeight = 360
+  ClientWidth = 836
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,11 +12,12 @@ object Form2: TForm2
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 27
   object Label1: TLabel
-    Left = 16
-    Top = 398
+    Left = 11
+    Top = 302
     Width = 74
     Height = 27
     Margins.Left = 6
@@ -31,23 +32,10 @@ object Form2: TForm2
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Button1: TButton
-    Left = 556
-    Top = 11
-    Width = 150
-    Height = 50
-    Margins.Left = 6
-    Margins.Top = 6
-    Margins.Right = 6
-    Margins.Bottom = 6
-    Caption = 'CONECTAR'
-    TabOrder = 0
-    OnClick = Button1Click
-  end
   object LabeledEdit1: TLabeledEdit
-    Left = 16
-    Top = 144
-    Width = 690
+    Left = 11
+    Top = 48
+    Width = 801
     Height = 35
     Margins.Left = 6
     Margins.Top = 6
@@ -60,12 +48,12 @@ object Form2: TForm2
     EditLabel.Margins.Right = 6
     EditLabel.Margins.Bottom = 6
     EditLabel.Caption = 'RAIZ DAS CHAVES:'
-    TabOrder = 1
-    Text = 'TDC2018:STRESS:'
+    TabOrder = 0
+    Text = 'TDC2018:STRESS'
   end
   object Button2: TButton
-    Left = 16
-    Top = 256
+    Left = 6
+    Top = 95
     Width = 402
     Height = 50
     Margins.Left = 6
@@ -73,12 +61,12 @@ object Form2: TForm2
     Margins.Right = 6
     Margins.Bottom = 6
     Caption = 'CRIAR CEM MIL CHAVES'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 16
-    Top = 336
+    Left = 11
+    Top = 240
     Width = 402
     Height = 50
     Margins.Left = 6
@@ -86,26 +74,12 @@ object Form2: TForm2
     Margins.Right = 6
     Margins.Bottom = 6
     Caption = 'LER UMA CHAVE'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button3Click
   end
-  object SpinEdit1: TSpinEdit
-    Left = 448
-    Top = 340
-    Width = 258
-    Height = 37
-    Margins.Left = 6
-    Margins.Top = 6
-    Margins.Right = 6
-    Margins.Bottom = 6
-    MaxValue = 0
-    MinValue = 0
-    TabOrder = 4
-    Value = 50000
-  end
   object Button4: TButton
-    Left = 16
-    Top = 480
+    Left = 410
+    Top = 95
     Width = 402
     Height = 50
     Margins.Left = 6
@@ -113,7 +87,15 @@ object Form2: TForm2
     Margins.Right = 6
     Margins.Bottom = 6
     Caption = 'DELETAR TODAS AS CHAVES'
-    TabOrder = 5
+    TabOrder = 3
     OnClick = Button4Click
+  end
+  object Edit1: TEdit
+    Left = 11
+    Top = 196
+    Width = 801
+    Height = 35
+    TabOrder = 4
+    Text = 'TDC2018:STRESS:5000#'
   end
 end
