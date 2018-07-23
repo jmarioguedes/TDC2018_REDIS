@@ -3,22 +3,25 @@
         <ProjectGuid>{8C3F5834-4B18-442A-A467-FA11A922E784}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="PRIMEIRO CONTATO\TDC2018_Iniciando.dproj">
+        <Projects Include="A - PRIMEIRO CONTATO\TDC2018_Iniciando.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="AVALIACAO\TDC2018_Avaliacao.dproj">
+        <Projects Include="B - AVALIACAO\TDC2018_Avaliacao.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DATASNAP SESSAO\TDC2018_DATASNAP.dproj">
+        <Projects Include="C - PUBSUB\TDC2018_PUBSUB.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="PUBSUB\TDC2018_PUBSUB.dproj">
+        <Projects Include="D - DATASNAP\TDC2018_DATASNAP.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="ENFILEIRADOR\TDC2018_Enfileirador.dproj">
+        <Projects Include="E - ENFILEIRADOR\TDC2018_Enfileirador.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="CONSUMIDOR\TDC2018_Consumidor.dproj">
+        <Projects Include="F - CONSUMIDOR\TDC2018_Consumidor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Z - DATABASE\exe\TDC2018_POPULADOR.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -30,67 +33,76 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="TDC2018_Iniciando">
-        <MSBuild Projects="PRIMEIRO CONTATO\TDC2018_Iniciando.dproj"/>
+        <MSBuild Projects="A - PRIMEIRO CONTATO\TDC2018_Iniciando.dproj"/>
     </Target>
     <Target Name="TDC2018_Iniciando:Clean">
-        <MSBuild Projects="PRIMEIRO CONTATO\TDC2018_Iniciando.dproj" Targets="Clean"/>
+        <MSBuild Projects="A - PRIMEIRO CONTATO\TDC2018_Iniciando.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TDC2018_Iniciando:Make">
-        <MSBuild Projects="PRIMEIRO CONTATO\TDC2018_Iniciando.dproj" Targets="Make"/>
+        <MSBuild Projects="A - PRIMEIRO CONTATO\TDC2018_Iniciando.dproj" Targets="Make"/>
     </Target>
     <Target Name="TDC2018_Avaliacao">
-        <MSBuild Projects="AVALIACAO\TDC2018_Avaliacao.dproj"/>
+        <MSBuild Projects="B - AVALIACAO\TDC2018_Avaliacao.dproj"/>
     </Target>
     <Target Name="TDC2018_Avaliacao:Clean">
-        <MSBuild Projects="AVALIACAO\TDC2018_Avaliacao.dproj" Targets="Clean"/>
+        <MSBuild Projects="B - AVALIACAO\TDC2018_Avaliacao.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TDC2018_Avaliacao:Make">
-        <MSBuild Projects="AVALIACAO\TDC2018_Avaliacao.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TDC2018_DATASNAP">
-        <MSBuild Projects="DATASNAP SESSAO\TDC2018_DATASNAP.dproj"/>
-    </Target>
-    <Target Name="TDC2018_DATASNAP:Clean">
-        <MSBuild Projects="DATASNAP SESSAO\TDC2018_DATASNAP.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TDC2018_DATASNAP:Make">
-        <MSBuild Projects="DATASNAP SESSAO\TDC2018_DATASNAP.dproj" Targets="Make"/>
+        <MSBuild Projects="B - AVALIACAO\TDC2018_Avaliacao.dproj" Targets="Make"/>
     </Target>
     <Target Name="TDC2018_PUBSUB">
-        <MSBuild Projects="PUBSUB\TDC2018_PUBSUB.dproj"/>
+        <MSBuild Projects="C - PUBSUB\TDC2018_PUBSUB.dproj"/>
     </Target>
     <Target Name="TDC2018_PUBSUB:Clean">
-        <MSBuild Projects="PUBSUB\TDC2018_PUBSUB.dproj" Targets="Clean"/>
+        <MSBuild Projects="C - PUBSUB\TDC2018_PUBSUB.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TDC2018_PUBSUB:Make">
-        <MSBuild Projects="PUBSUB\TDC2018_PUBSUB.dproj" Targets="Make"/>
+        <MSBuild Projects="C - PUBSUB\TDC2018_PUBSUB.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TDC2018_DATASNAP">
+        <MSBuild Projects="D - DATASNAP\TDC2018_DATASNAP.dproj"/>
+    </Target>
+    <Target Name="TDC2018_DATASNAP:Clean">
+        <MSBuild Projects="D - DATASNAP\TDC2018_DATASNAP.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TDC2018_DATASNAP:Make">
+        <MSBuild Projects="D - DATASNAP\TDC2018_DATASNAP.dproj" Targets="Make"/>
     </Target>
     <Target Name="TDC2018_Enfileirador">
-        <MSBuild Projects="ENFILEIRADOR\TDC2018_Enfileirador.dproj"/>
+        <MSBuild Projects="E - ENFILEIRADOR\TDC2018_Enfileirador.dproj"/>
     </Target>
     <Target Name="TDC2018_Enfileirador:Clean">
-        <MSBuild Projects="ENFILEIRADOR\TDC2018_Enfileirador.dproj" Targets="Clean"/>
+        <MSBuild Projects="E - ENFILEIRADOR\TDC2018_Enfileirador.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TDC2018_Enfileirador:Make">
-        <MSBuild Projects="ENFILEIRADOR\TDC2018_Enfileirador.dproj" Targets="Make"/>
+        <MSBuild Projects="E - ENFILEIRADOR\TDC2018_Enfileirador.dproj" Targets="Make"/>
     </Target>
     <Target Name="TDC2018_Consumidor">
-        <MSBuild Projects="CONSUMIDOR\TDC2018_Consumidor.dproj"/>
+        <MSBuild Projects="F - CONSUMIDOR\TDC2018_Consumidor.dproj"/>
     </Target>
     <Target Name="TDC2018_Consumidor:Clean">
-        <MSBuild Projects="CONSUMIDOR\TDC2018_Consumidor.dproj" Targets="Clean"/>
+        <MSBuild Projects="F - CONSUMIDOR\TDC2018_Consumidor.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TDC2018_Consumidor:Make">
-        <MSBuild Projects="CONSUMIDOR\TDC2018_Consumidor.dproj" Targets="Make"/>
+        <MSBuild Projects="F - CONSUMIDOR\TDC2018_Consumidor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TDC2018_POPULADOR">
+        <MSBuild Projects="Z - DATABASE\exe\TDC2018_POPULADOR.dproj"/>
+    </Target>
+    <Target Name="TDC2018_POPULADOR:Clean">
+        <MSBuild Projects="Z - DATABASE\exe\TDC2018_POPULADOR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TDC2018_POPULADOR:Make">
+        <MSBuild Projects="Z - DATABASE\exe\TDC2018_POPULADOR.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="TDC2018_Iniciando;TDC2018_Avaliacao;TDC2018_DATASNAP;TDC2018_PUBSUB;TDC2018_Enfileirador;TDC2018_Consumidor"/>
+        <CallTarget Targets="TDC2018_Iniciando;TDC2018_Avaliacao;TDC2018_PUBSUB;TDC2018_DATASNAP;TDC2018_Enfileirador;TDC2018_Consumidor;TDC2018_POPULADOR"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TDC2018_Iniciando:Clean;TDC2018_Avaliacao:Clean;TDC2018_DATASNAP:Clean;TDC2018_PUBSUB:Clean;TDC2018_Enfileirador:Clean;TDC2018_Consumidor:Clean"/>
+        <CallTarget Targets="TDC2018_Iniciando:Clean;TDC2018_Avaliacao:Clean;TDC2018_PUBSUB:Clean;TDC2018_DATASNAP:Clean;TDC2018_Enfileirador:Clean;TDC2018_Consumidor:Clean;TDC2018_POPULADOR:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TDC2018_Iniciando:Make;TDC2018_Avaliacao:Make;TDC2018_DATASNAP:Make;TDC2018_PUBSUB:Make;TDC2018_Enfileirador:Make;TDC2018_Consumidor:Make"/>
+        <CallTarget Targets="TDC2018_Iniciando:Make;TDC2018_Avaliacao:Make;TDC2018_PUBSUB:Make;TDC2018_DATASNAP:Make;TDC2018_Enfileirador:Make;TDC2018_Consumidor:Make;TDC2018_POPULADOR:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
