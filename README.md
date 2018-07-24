@@ -1,7 +1,7 @@
 # TDC2018_REDIS
 Projetos de exemplos da palestra sobre o Redis no TDC 2018
 
-## Slides da Palestra:** 
+## Slides da Palestra:
 https://www.slideshare.net/jmarioguedes/tdcsp-2018-possibilidades-com-o-redis-no-delphi
 
 ## ATENÇÃO:
